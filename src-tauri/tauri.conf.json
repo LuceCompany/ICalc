@@ -1,0 +1,53 @@
+{
+  "build": {
+    "distDir": "../build",
+    "devPath": "http://localhost:3000",
+    "beforeDevCommand": "yarn start",
+    "beforeBuildCommand": "yarn build"
+  },
+  "ctx": {},
+  "tauri": {
+    "embeddedServer": {
+      "active": true
+    },
+    "bundle": {
+      "active": true,
+      "targets": "[deb, appimage]",
+      "identifier": "com.tauri.dev",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "resources": [],
+      "externalBin": [],
+      "copyright": "LuceCompany",
+      "category": "DeveloperTool",
+      "shortDescription": "Calculator App",
+      "longDescription": "Example Calculator App build with React for Bryza Software",
+      "deb": {
+        "depends": [],
+        "useBootstrapper": true
+      },
+      "exceptionDomain": ""
+    },
+    "allowlist": {
+      "all": false
+    },
+    "window": {
+      "title": "Calculator",
+      "width": 470,
+      "height": 761,
+      "resizable": true,
+      "fullscreen": true
+    },
+    "security": {
+      "csp": "default-src blob: data: filesystem: ws: http: https: 'unsafe-eval' 'unsafe-inline'"
+    },
+    "inliner": {
+      "active": true
+    }
+  }
+}
